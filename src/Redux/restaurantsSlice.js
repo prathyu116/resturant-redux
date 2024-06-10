@@ -4,12 +4,12 @@ import axios from 'axios';
 // Async thunk to fetch restaurants with pagination
 export const fetchRestaurants = createAsyncThunk(
     'restaurants/fetchRestaurants',
-    async ({ page = 1}) => {
+    async (page = 1) => {
         const response = await axios.get(`http://localhost:3000/restaurants?_page=${page}&_per_page=3`);
         console.log("-------?", response)
         return {
             data: response.data.data,
-            total: parseInt(response.headers['x-total-count'], 10)
+            // total: parseInt(response.headers['x-total-count'], 10)
         };
     }
 );

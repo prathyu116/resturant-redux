@@ -19,10 +19,10 @@ const RestaurantList = () => {
   };
 
   const handlePageChange = (page) => {
-    dispatch(setCurrentPage(page));
+    // dispatch(setCurrentPage(page));
     if (page >= 1 && page <= totalPages) {
       dispatch(setCurrentPage(page));
-      dispatch(fetchRestaurants({ page, limit: 5 }));
+      dispatch(fetchRestaurants(page));
     }
   };
   console.log("ffffffcurrentPageffffffff", currentPage);

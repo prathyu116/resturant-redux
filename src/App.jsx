@@ -11,7 +11,7 @@ function App() {
   const currentPage = useSelector((state) => state.restaurants.currentPage);
 
   useEffect(() => {
-    dispatch(fetchRestaurants({ page: currentPage }));
+    dispatch(fetchRestaurants(currentPage));
   }, []);
 
   return (
